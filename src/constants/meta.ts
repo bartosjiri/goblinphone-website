@@ -1,4 +1,4 @@
-export const META_TITLE = 'Gobble Translate';
+export const META_TITLE = 'GoblinOS';
 export const META_DESCRIPTION = '@TODO';
 export const META_KEYWORDS = ['@TODO'];
 
