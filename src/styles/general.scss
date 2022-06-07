@@ -1,0 +1,28 @@
+@use './colors.scss' as *;
+@use './fonts.scss' as *;
+
+:root {
+	font-size: 62.5%;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	font-family: $font-family--primary, sans-serif;
+	font-size: 1.6rem;
+	line-height: 1.4;
+	color: $color-text--primary;
+	background-color: $color-background--primary;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	-webkit-tap-highlight-color: transparent;
+
+	a {
+		outline: 0;
+		text-decoration: none;
+	}
+}
