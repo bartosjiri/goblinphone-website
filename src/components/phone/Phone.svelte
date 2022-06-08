@@ -1,11 +1,15 @@
+<script lang="ts">
+	import Thumb from './Thumb.svelte';
+
+	let display: HTMLElement;
+</script>
+
 <div class="phone" {...$$restProps}>
-	<div class="thumb">
-		<img src="/assets/images/phone/thumb.png" alt="Thumb" />
-	</div>
+	<Thumb bind:display />
 	<div class="foreground">
 		<img src="/assets/images/phone/foreground.png" alt="Phone foreground" />
 	</div>
-	<div class="content">
+	<div bind:this={display} class="content">
 		<slot />
 	</div>
 	<div class="background">
@@ -31,11 +35,11 @@
 			transform: translateX(-50%) rotate(0);
 		}
 
-		.thumb,
+		:global(.thumb),
 		.foreground,
 		.background,
 		.space-keeper {
-			img {
+			:global(img) {
 				display: block;
 				max-height: 100vh;
 				max-width: 100vw;
@@ -60,7 +64,7 @@
 			z-index: 2;
 		}
 
-		.thumb,
+		:global(.thumb),
 		.foreground,
 		.background {
 			position: absolute;
@@ -69,7 +73,7 @@
 			pointer-events: none;
 		}
 
-		.thumb {
+		:global(.thumb) {
 			z-index: 4;
 		}
 
