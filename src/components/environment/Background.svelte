@@ -1,5 +1,5 @@
 <div class="background" {...$$restProps}>
-	<img src="/assets/images/background.jpg" alt="background" />
+	<img src="/assets/images/environment/background.jpg" alt="Background" />
 </div>
 
 <style lang="scss">

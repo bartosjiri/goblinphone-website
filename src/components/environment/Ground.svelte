@@ -1,5 +1,5 @@
 <div class="ground" {...$$restProps}>
-	<img src="/assets/images/ground.png" alt="ground" />
+	<img src="/assets/images/environment/ground.png" alt="Ground" />
 </div>
 
 <style lang="scss">

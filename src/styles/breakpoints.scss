@@ -1,5 +1,4 @@
-$breakpoint--mobile-zoomed: 500;
-$breakpoint--mobile-straight: 735;
+$breakpoint--mobile-straight: 975;
 
 @mixin breakpoint($size) {
 	@media only screen and (max-width: #{$size}px) {
