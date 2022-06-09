@@ -2,6 +2,9 @@
 	import Thumb from './Thumb.svelte';
 
 	let display: HTMLElement;
+	let displayWidth: number;
+
+	const DISPLAY_WIDTH_MAX = 414;
 </script>
 
 <div class="phone" {...$$restProps}>
@@ -9,7 +12,12 @@
 	<div class="foreground">
 		<img src="/assets/images/phone/foreground.png" alt="Phone foreground" />
 	</div>
-	<div bind:this={display} class="content">
+	<div
+		bind:this={display}
+		bind:clientWidth={displayWidth}
+		class="content"
+		style={`font-size: ${(displayWidth / DISPLAY_WIDTH_MAX) * 100}px;`}
+	>
 		<slot />
 	</div>
 	<div class="background">
@@ -30,7 +38,7 @@
 		transform: translateX(-100%) rotate(-10deg);
 		@include transition($transition--primary, transform, left, bottom);
 
-		@include breakpoint($breakpoint--mobile-straight) {
+		@include breakpoint($breakpoint--mobile) {
 			left: 50%;
 			transform: translateX(-50%) rotate(0);
 		}
@@ -45,7 +53,7 @@
 				max-width: 100vw;
 				@include transition($transition--primary, max-height);
 
-				@include breakpoint($breakpoint--mobile-straight) {
+				@include breakpoint($breakpoint--mobile) {
 					max-height: calc(100vh - $bottom-offset);
 					max-width: 240vw;
 				}
@@ -60,8 +68,14 @@
 			right: 32%;
 			display: flex;
 			flex-direction: column;
+			color: $color-text--primary;
+			background: $color-background--primary;
 			overflow-y: auto;
 			z-index: 2;
+
+			:global(*::selection) {
+				background: rgba($color-text--primary, 0.33);
+			}
 		}
 
 		:global(.thumb),

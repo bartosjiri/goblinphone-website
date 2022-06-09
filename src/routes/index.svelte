@@ -1,35 +1,31 @@
 <script lang="ts">
 	import { PageMeta } from '$util/meta';
+	import { AppWrapper } from '$components/ui';
+	import { AppIconsGrid, AppIcon } from '$components/applications/homescreen';
 </script>
 
 <PageMeta />
-<p>Test</p>
-<p>Test</p>
-<p>Test</p>
-<p>Test</p>
-<p>Test</p>
-<p>Test</p>
-<p>Test</p>
-<p>Test</p>
-<p>Test</p>
-<p>Test</p>
-<p>Test</p>
-<p>Test</p>
-<p>Test</p>
-<p>Test</p>
-<p>Test</p>
-<p>Test</p>
-<p>Test</p>
-<p>Test</p>
-<p>Test</p>
-<p>Test</p>
-<p>Test</p>
-<p>Test</p>
-<a href="/test">Link</a>
-<p>Test</p>
-<p>Test</p>
-<p>Test</p>
-<p>Test</p>
-<p>Test</p>
-<p>Test</p>
-<p>Test</p>
+
+<AppWrapper>
+	<AppIconsGrid>
+		<AppIcon
+			title="Gobble Translate"
+			iconUrl="/assets/images/applications/gobble-translate/appicon.png"
+		/>
+		<AppIcon
+			title="McGoblin"
+			iconUrl="/assets/images/applications/mcgoblin/appicon.png"
+			href="mcgoblin"
+		/>
+		<AppIcon
+			title="McGoblin"
+			iconUrl="/assets/images/applications/mcgoblin/appicon.png"
+			href="mcgoblin"
+		/>
+		<AppIcon title="Gobblify" />
+		<AppIcon title="Screecher (Twitter)" />
+		<AppIcon title="Gibder (Tinder)" />
+		<AppIcon title="Developer / About" />
+		<AppIcon title="MySnakes" href="/mysnakes" />
+	</AppIconsGrid>
+</AppWrapper>

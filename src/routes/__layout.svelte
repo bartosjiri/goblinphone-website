@@ -1,7 +1,6 @@
 <script>
-	import Phone from '$components/phone/Phone.svelte';
-	import Ground from '$components/environment/Ground.svelte';
-	import Background from '$components/environment/Background.svelte';
+	import { Phone } from '$components/phone';
+	import { Background, Ground } from '$components/environment';
 
 	import '../styles/__global.scss';
 </script>
