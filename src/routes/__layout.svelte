@@ -1,6 +1,6 @@
 <script>
 	import { Phone } from '$components/phone';
-	import { TopBar, Navigation } from '$components/ui';
+	import { TopBar, Navigation, Lockscreen, Playback } from '$components/system';
 	import { Background, Ground } from '$components/environment';
 
 	import '../styles/__global.scss';
@@ -8,9 +8,11 @@
 
 <main>
 	<Phone>
+		<Lockscreen />
 		<TopBar />
 		<slot />
 		<Navigation />
+		<Playback />
 	</Phone>
 	<Ground />
 	<Background />

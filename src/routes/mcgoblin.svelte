@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	import { AppWrapper, Button } from '$components/ui';
-	import { topbarVariant } from '$stores/ui/topbar';
-	import { navigationActive } from '$stores/ui/navigation';
+	import { AppWrapper, Button } from '$components/system';
+	import { topbarVariant } from '$stores/system/topbar';
+	import { navigationActive } from '$stores/system/navigation';
 
 	import { PLATFORM_DOMAIN } from '$constants/platform';
 

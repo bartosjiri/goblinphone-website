@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button } from '$components/ui';
+	import { Button } from '$components/system';
 
 	import { generateTranslation } from './generateTranslation';
 

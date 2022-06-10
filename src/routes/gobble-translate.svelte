@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	import { AppWrapper } from '$components/ui';
+	import { AppWrapper } from '$components/system';
 	import { Translate } from '$components/applications/gobble-translate';
-	import { topbarVariant } from '$stores/ui/topbar';
-	import { navigationActive } from '$stores/ui/navigation';
+	import { topbarVariant } from '$stores/system/topbar';
+	import { navigationActive } from '$stores/system/navigation';
 
 	onMount(() => {
 		$topbarVariant = 'dark';

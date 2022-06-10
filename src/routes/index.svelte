@@ -2,11 +2,11 @@
 	import { onMount } from 'svelte';
 
 	import { PageMeta } from '$util/meta';
-	import { AppWrapper } from '$components/ui';
+	import { AppWrapper } from '$components/system';
 	import { AppIconsGrid, AppIcon } from '$components/applications/homescreen';
 
-	import { topbarVariant } from '$stores/ui/topbar';
-	import { navigationActive } from '$stores/ui/navigation';
+	import { topbarVariant } from '$stores/system/topbar';
+	import { navigationActive } from '$stores/system/navigation';
 
 	onMount(() => {
 		$topbarVariant = 'dark';

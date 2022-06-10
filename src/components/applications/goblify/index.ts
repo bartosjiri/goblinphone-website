@@ -1,0 +1,1 @@
+export { default as GoblifyWidget } from './Widget.svelte';

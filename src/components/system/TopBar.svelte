@@ -1,27 +1,28 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-
 	import { dayjs, DAYJS_FORMAT_TIME } from '$util/dayjs';
-	import { topbarVariant } from '$stores/ui/topbar';
+	import { topbarVariant } from '$stores/system/topbar';
 
-	let currentTime: string = '0:00';
+	export let timeDisabled = false;
+
+	let interval: ReturnType<typeof setInterval> | null = null;
+	let currentTime: string = '';
 
 	const setCurrentTime = () => {
 		currentTime = dayjs().format(DAYJS_FORMAT_TIME);
 	};
 
-	onMount(() => {
-		setInterval(setCurrentTime, 1000);
-	});
+	$: !timeDisabled
+		? (interval = setInterval(setCurrentTime, 1000))
+		: clearInterval(interval as any as number);
 </script>
 
 <div class:top-bar={true} class:--light={$topbarVariant === 'light'} {...$$restProps}>
 	<div class="container">
-		<div class="time">
+		<div class:time={true} class:--disabled={timeDisabled}>
 			<span>{currentTime}</span>
 		</div>
 		<div class="utility">
-			<img src="/assets/images/ui/topbar-icons.png" alt="Utility icons" />
+			<img src="/assets/images/system/topbar-icons.png" alt="Utility icons" />
 		</div>
 	</div>
 </div>
@@ -49,10 +50,15 @@
 					font-size: 0.25em;
 					font-weight: $font-weight--bold;
 				}
+
+				&.--disabled {
+					display: none;
+				}
 			}
 
 			.utility {
 				// height: 1em;
+				margin-left: auto;
 
 				img {
 					display: block;

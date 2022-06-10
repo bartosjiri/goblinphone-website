@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { navigationActive } from '$stores/ui/navigation';
+	import { navigationActive } from '$stores/system/navigation';
 </script>
 
 <section class:navigation={true} class:--hidden={$navigationActive === false} {...$$restProps}>
 	<div class="container">
 		<a class="item" href="/">
-			<img src="/assets/images/ui/home.png" alt="Home" />
+			<img src="/assets/images/system/navigation-home.png" alt="Home" />
 		</a>
 	</div>
 </section>
