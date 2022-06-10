@@ -2,11 +2,13 @@
 	export let element: string = 'button';
 	export let color: string = '#000000';
 	export let background: string = '#f0c3a0';
+	export let onClick: () => void = () => {};
 </script>
 
 <svelte:element
 	this={element}
 	class:button={true}
+	on:click={onClick}
 	style={`color: ${color}; background: ${background};`}
 	{...$$restProps}
 >
@@ -15,6 +17,7 @@
 
 <style lang="scss">
 	.button {
+		font-family: $font-family--primary;
 		font-size: 0.25em;
 		font-weight: $font-weight--bold;
 		text-align: center;

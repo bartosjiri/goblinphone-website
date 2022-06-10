@@ -16,7 +16,7 @@
 		bind:this={display}
 		bind:clientWidth={displayWidth}
 		class="content"
-		style={`font-size: ${(displayWidth / DISPLAY_WIDTH_MAX) * 100}px;`}
+		style={`font-size: ${((displayWidth || DISPLAY_WIDTH_MAX / 2) / DISPLAY_WIDTH_MAX) * 100}px;`}
 	>
 		<slot />
 	</div>

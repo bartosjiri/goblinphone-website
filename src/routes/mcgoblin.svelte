@@ -24,6 +24,7 @@
 					<img
 						src="/assets/images/applications/mcgoblin/unavailable.gif"
 						alt="Unavailable notice"
+						loading="lazy"
 					/>
 				</div>
 				<div class="text">

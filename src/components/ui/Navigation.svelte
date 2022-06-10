@@ -53,7 +53,7 @@
 				&:hover {
 					&::after {
 						background: rgba(#000000, 0.2);
-						border-radius: 50%;
+						border-radius: 12px;
 					}
 
 					img {
