@@ -4,12 +4,14 @@
 	import { topbarVariant } from '$stores/ui/topbar';
 	import { navigationActive } from '$stores/ui/navigation';
 
+	import { PLATFORM_DOMAIN } from '$constants/platform';
+
 	const MYSNAKES_URL = 'https://mysnakes.me';
 
 	const handleClick = (e: MouseEvent) => {
 		e.preventDefault();
 		if (typeof window !== 'undefined') {
-			window.open(MYSNAKES_URL, '_blank');
+			window.open(`${MYSNAKES_URL}?ref=${PLATFORM_DOMAIN}`, '_blank');
 		}
 	};
 

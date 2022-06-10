@@ -33,7 +33,8 @@
 			@include transition($transition--primary, transform);
 
 			.icon {
-				overflow: hidden;
+				filter: drop-shadow(0.02em 0.04em 0 rgba(0, 0, 0, 0.125));
+				margin-bottom: 0.08em;
 				@include transition($transition--primary, filter);
 
 				img {
