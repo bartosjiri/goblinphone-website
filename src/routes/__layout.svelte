@@ -12,7 +12,7 @@
 		<TopBar />
 		<slot />
 		<Navigation />
-		<Playback />
+		<!-- <Playback /> -->
 	</Phone>
 	<Ground />
 	<Background />
