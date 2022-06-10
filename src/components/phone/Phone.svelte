@@ -7,7 +7,7 @@
 	const DISPLAY_WIDTH_MAX = 414;
 </script>
 
-<div class="phone" {...$$restProps}>
+<div class:phone={true} {...$$restProps}>
 	<Thumb bind:display />
 	<div class="foreground">
 		<img src="/assets/images/phone/foreground.png" alt="Phone foreground" />

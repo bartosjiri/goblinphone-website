@@ -1,7 +1,17 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
 	import { PageMeta } from '$util/meta';
 	import { AppWrapper } from '$components/ui';
 	import { AppIconsGrid, AppIcon } from '$components/applications/homescreen';
+
+	import { topbarVariant } from '$stores/ui/topbar';
+	import { navigationActive } from '$stores/ui/navigation';
+
+	onMount(() => {
+		$topbarVariant = 'dark';
+		$navigationActive = false;
+	});
 </script>
 
 <PageMeta />

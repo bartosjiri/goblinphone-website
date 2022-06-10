@@ -28,7 +28,7 @@
 	}
 </script>
 
-<div bind:this={thumb} class="thumb" {...$$restProps}>
+<div bind:this={thumb} class:thumb={true} {...$$restProps}>
 	<img src="/assets/images/phone/thumb.png" alt="Thumb" />
 </div>
 

@@ -1,0 +1,1 @@
+export const DAYJS_FORMAT_TIME = "h:mm";

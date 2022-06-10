@@ -1,4 +1,4 @@
-<div class="background" {...$$restProps}>
+<div class:background={true} {...$$restProps}>
 	<img src="/assets/images/environment/background.jpg" alt="Background" />
 </div>
 

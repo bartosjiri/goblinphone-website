@@ -1,4 +1,4 @@
-<div class="app-icons-grid" {...$$restProps}>
+<div class:app-icons-grid={true} {...$$restProps}>
 	<slot />
 </div>
 

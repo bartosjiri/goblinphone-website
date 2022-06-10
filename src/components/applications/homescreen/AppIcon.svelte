@@ -4,7 +4,7 @@
 	export let iconUrl: string | undefined = undefined;
 </script>
 
-<div class="app-icon" {...$$restProps}>
+<div class:app-icon={true} {...$$restProps}>
 	<a class="link" {href}>
 		<div class="icon">
 			<img

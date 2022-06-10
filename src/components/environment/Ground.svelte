@@ -1,4 +1,4 @@
-<div class="ground" {...$$restProps}>
+<div class:ground={true} {...$$restProps}>
 	<img src="/assets/images/environment/ground.png" alt="Ground" />
 </div>
 

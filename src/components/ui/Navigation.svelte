@@ -1,4 +1,8 @@
-<section class="navigation" {...$$restProps}>
+<script lang="ts">
+	import { navigationActive } from '$stores/ui/navigation';
+</script>
+
+<section class:navigation={true} class:--hidden={$navigationActive === false} {...$$restProps}>
 	<div class="container">
 		<a class="item" href="/">
 			<img src="/assets/images/ui/home.png" alt="Home" />
@@ -10,27 +14,28 @@
 	.navigation {
 		margin-top: auto;
 		background: rgba(#000000, 0.1);
+		padding-bottom: 0.08em;
 
 		.container {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			padding: $layout-padding;
 			border-top: 2px solid $color-text--primary;
+			padding: 0.1em;
 
 			.item {
 				position: relative;
 				display: flex;
-				height: 3rem;
-				width: 3rem;
+				height: 0.35em;
+				width: 0.35em;
 
 				&::after {
 					content: '';
 					position: absolute;
 					top: 50%;
 					left: 50%;
-					width: 5rem;
-					height: 5rem;
+					width: 0.5em;
+					height: 0.5em;
 					transform: translate(-50%, -50%);
 					background: rgba(#000000, 0.15);
 					border-radius: 8px;
@@ -56,6 +61,10 @@
 					}
 				}
 			}
+		}
+
+		&.--hidden {
+			display: none;
 		}
 	}
 </style>
