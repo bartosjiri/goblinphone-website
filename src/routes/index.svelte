@@ -21,21 +21,21 @@
 		<AppIcon
 			title="Gobble Translate"
 			iconUrl="/assets/images/applications/gobble-translate/appicon.png"
+			href="/gobble-translate"
 		/>
 		<AppIcon
 			title="McGoblin"
 			iconUrl="/assets/images/applications/mcgoblin/appicon.png"
-			href="mcgoblin"
-		/>
-		<AppIcon
-			title="McGoblin"
-			iconUrl="/assets/images/applications/mcgoblin/appicon.png"
-			href="mcgoblin"
+			href="/mcgoblin"
 		/>
 		<AppIcon title="Gobblify" />
-		<AppIcon title="Screecher (Twitter)" />
-		<AppIcon title="Gibder (Tinder)" />
-		<AppIcon title="Developer / About" />
-		<AppIcon title="MySnakes" href="/mysnakes" />
+		<AppIcon title="Screecher? (Twitter)" />
+		<AppIcon title="Tinder?" />
+		<AppIcon title="Contacts" />
+		<AppIcon
+			title="MySnakes"
+			iconUrl="/assets/images/applications/mysnakes/appicon.png"
+			href="/mysnakes"
+		/>
 	</AppIconsGrid>
 </AppWrapper>
