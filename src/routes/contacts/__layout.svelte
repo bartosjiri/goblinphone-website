@@ -3,7 +3,6 @@
 
 	import { PageMeta } from '$util/meta';
 	import { AppWrapper } from '$components/system';
-	import { Translate } from '$components/applications/gobble-translate';
 
 	import { topbarVariant } from '$stores/system/topbar';
 	import { navigationActive } from '$stores/system/navigation';
@@ -14,39 +13,35 @@
 	});
 </script>
 
-<PageMeta title="Gobble Translate" />
-<section class="gobble-translate" {...$$restProps}>
+<PageMeta title="Contacts" />
+<section class="contacts" {...$$restProps}>
 	<AppWrapper>
 		<div class="container">
 			<div class="header">
 				<div class="logo">
-					<img
-						src="/assets/images/applications/gobble-translate/appicon.png"
-						alt="Gobble Translate logo"
-					/>
+					<img src="/assets/images/applications/contacts/appicon.png" alt="Contacts logo" />
 				</div>
 				<div class="title">
-					<span>Gobble Translate</span>
+					<span>Contacts</span>
 				</div>
 			</div>
-			<div class="content">
-				<Translate />
-			</div>
+			<slot />
 		</div>
 	</AppWrapper>
 </section>
 
 <style lang="scss">
-	.gobble-translate {
+	.contacts {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		height: 100%;
 		background: #ffffff;
+		overflow: hidden;
 
 		.container {
 			display: grid;
-			grid-template-rows: auto 1fr;
+			grid-template-rows: auto 1fr auto;
 			height: 100%;
 
 			.header {
@@ -61,6 +56,8 @@
 					img {
 						display: block;
 						height: 0.4em;
+						width: 0.4em;
+						overflow: hidden;
 					}
 				}
 
@@ -74,6 +71,15 @@
 					}
 				}
 			}
+
+			// .content {
+			// 	overflow-y: auto;
+			// }
+
+			// .actions {
+			// 	display: flex;
+			// 	justify-content: center;
+			// }
 		}
 	}
 </style>

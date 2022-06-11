@@ -39,6 +39,7 @@
 			.icon {
 				filter: $link-icon-filter;
 				margin-bottom: 0.08em;
+				overflow: hidden;
 				@include transition($transition--primary, filter);
 
 				img {
@@ -111,7 +112,7 @@
 
 					.title {
 						background: $installing-title-background;
-						filter: grayscale(0.8) $link-title-filter;
+						filter: $link-title-filter;
 					}
 				}
 			}

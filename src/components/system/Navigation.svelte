@@ -4,7 +4,7 @@
 
 <section class:navigation={true} class:--hidden={$navigationActive === false} {...$$restProps}>
 	<div class="container">
-		<a class="item" href="/">
+		<a class="item" href="/" sveltekit:prefetch>
 			<img src="/assets/images/system/navigation-home.png" alt="Home" />
 		</a>
 	</div>

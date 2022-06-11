@@ -39,7 +39,7 @@
 			</div>
 		</div>
 		<div class="widgets">
-			<GoblifyWidget />
+			<!-- <GoblifyWidget /> -->
 		</div>
 		<div class="hint">
 			<span>Tap to unlock</span>
