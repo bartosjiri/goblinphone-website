@@ -38,10 +38,10 @@
 		<textarea value={output} rows={5} disabled />
 	</div>
 	<div class="action">
-		<Button background="#e2e2e2" onClick={handleRegenerate}>
+		<Button onClick={handleRegenerate}>
 			<span>Get synonym</span>
 		</Button>
-		<Button background="#e2e2e2" onClick={handleCopy}>
+		<Button onClick={handleCopy}>
 			<span>Copy result</span>
 		</Button>
 	</div>
@@ -59,11 +59,11 @@
 				$padding: 0.5em;
 				font-size: 0.27em;
 				width: 100%;
-				width: calc(100% - ($padding * 2));
 				padding: $padding;
 				resize: none;
 				border: 2px solid #e2e2e2;
 				border-radius: 6px;
+				box-sizing: border-box;
 			}
 		}
 

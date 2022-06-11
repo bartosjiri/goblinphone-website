@@ -1,12 +1,13 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
+	import { PageMeta } from '$util/meta';
+
 	import { topbarVariant } from '$stores/system/topbar';
 	import { navigationActive } from '$stores/system/navigation';
 
-	import { PLATFORM_DOMAIN } from '$constants/platform';
-
-	const MYSNAKES_URL = 'https://mysnakes.me';
+	import { PLATFORM_DOMAIN } from '$constants/util/platform';
+	import { MYSNAKES_URL } from '$constants/applications/mysnakes';
 
 	const handleClick = (e: MouseEvent) => {
 		e.preventDefault();
@@ -21,6 +22,7 @@
 	});
 </script>
 
+<PageMeta title="MySnakes" />
 <section class="mysnakes" on:click={handleClick} {...$$restProps}>
 	<div class="overlay" />
 	<iframe src={MYSNAKES_URL} title="MySnakes" />

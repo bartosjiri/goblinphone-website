@@ -2,10 +2,11 @@
 	export let href: string | undefined = undefined;
 	export let title: string;
 	export let iconUrl: string | undefined = undefined;
+	export let installing: boolean = false;
 </script>
 
 <div class:app-icon={true} {...$$restProps}>
-	<a class="link" {href}>
+	<a class="link" class:--installing={installing} href={installing ? '' : href} sveltekit:prefetch>
 		<div class="icon">
 			<img
 				src={iconUrl || `/assets/images/applications/homescreen/appicon-placeholder.png`}
@@ -13,7 +14,7 @@
 			/>
 		</div>
 		<div class="title">
-			<span>{title}</span>
+			<span>{installing ? 'Installing...' : title}</span>
 		</div>
 	</a>
 </div>
@@ -32,8 +33,11 @@
 			grid-template-rows: auto 1fr;
 			@include transition($transition--primary, transform);
 
+			$link-icon-filter: drop-shadow(0.02em 0.04em 0 rgba(0, 0, 0, 0.125));
+			$link-title-filter: drop-shadow(0.15em 0.2em 0 rgba(0, 0, 0, 0.125));
+
 			.icon {
-				filter: drop-shadow(0.02em 0.04em 0 rgba(0, 0, 0, 0.125));
+				filter: $link-icon-filter;
 				margin-bottom: 0.08em;
 				@include transition($transition--primary, filter);
 
@@ -61,7 +65,7 @@
 				border: 2px solid $color-text--primary;
 				border-radius: 9px 7px 5px 8px;
 				box-shadow: 0 1px 0 #000;
-				filter: drop-shadow(0.15em 0.2em 0 rgba(0, 0, 0, 0.125));
+				filter: $link-title-filter;
 				@include transition($transition--primary, background, filter);
 			}
 
@@ -79,6 +83,36 @@
 				.title {
 					background: darken($title-background-color, 8%);
 					filter: drop-shadow(0.15em 0.3em 0 rgba(0, 0, 0, 0.125));
+				}
+			}
+
+			&.--installing {
+				$installing-title-background: #a1a1a1;
+				cursor: default;
+
+				.icon {
+					filter: grayscale(1) $link-icon-filter;
+				}
+
+				.title {
+					background: $installing-title-background;
+				}
+
+				&:hover {
+					transform: none;
+
+					.icon {
+						filter: grayscale(1) $link-icon-filter;
+
+						img {
+							transform: rotate(0deg);
+						}
+					}
+
+					.title {
+						background: $installing-title-background;
+						filter: grayscale(0.8) $link-title-filter;
+					}
 				}
 			}
 		}

@@ -3,6 +3,7 @@
 	import { GoblifyWidget } from '$components/applications/goblify';
 
 	import { lockscreenActive } from '$stores/system/lockscreen';
+	import { topbarVariant } from '$stores/system/topbar';
 
 	import { dayjs, DAYJS_FORMAT_TIME, DAYJS_FORMAT_DAYDATE } from '$util/dayjs';
 
@@ -16,12 +17,13 @@
 		currentDate = now.format(DAYJS_FORMAT_DAYDATE);
 	};
 
-	$: lockscreenActive
+	$: $lockscreenActive
 		? (interval = setInterval(setCurrentDatetime, 1000))
 		: clearInterval(interval as any as number);
 
 	const handleUnlock = () => {
 		$lockscreenActive = false;
+		$topbarVariant = 'dark';
 	};
 </script>
 
@@ -78,11 +80,14 @@
 			z-index: 1;
 			cursor: pointer;
 
+			$content-color: #fff;
+
 			.datetime {
 				grid-row: 1/2;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
+				min-height: 1.4em;
 
 				.time {
 					display: flex;
@@ -91,7 +96,7 @@
 						font-size: 1em;
 						font-weight: $font-weight--bold;
 						line-height: 1;
-						color: white;
+						color: $content-color;
 					}
 				}
 
@@ -102,7 +107,7 @@
 						font-size: 0.4em;
 						font-weight: $font-weight--bold;
 						line-height: 1;
-						color: white;
+						color: $content-color;
 					}
 				}
 			}
@@ -124,7 +129,7 @@
 					font-size: 0.25em;
 					font-weight: $font-weight--bold;
 					line-height: 1;
-					color: white;
+					color: $content-color;
 				}
 			}
 		}

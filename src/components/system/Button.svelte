@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let element: string = 'button';
 	export let color: string = '#000000';
-	export let background: string = '#f0c3a0';
+	export let backgroundColor: string = '#e2e2e2';
 	export let onClick: () => void = () => {};
 </script>
 
@@ -9,7 +9,7 @@
 	this={element}
 	class:button={true}
 	on:click={onClick}
-	style={`color: ${color}; background: ${background};`}
+	style={`color: ${color}; background: ${backgroundColor};`}
 	{...$$restProps}
 >
 	<slot />

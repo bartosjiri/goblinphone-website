@@ -1,6 +1,6 @@
 import { PLATFORM_DOMAIN } from "./platform";
 
-export const META_TITLE = '👺 Goblin Phone';
+export const META_TITLE = 'Goblin Phone';
 export const META_DESCRIPTION = '@TODO';
 export const META_KEYWORDS = ['goblin', 'goblintown', 'goblingrlz', 'phone'];
 

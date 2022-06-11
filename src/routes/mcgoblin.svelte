@@ -1,11 +1,14 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
+	import { PageMeta } from '$util/meta';
 	import { AppWrapper, Button } from '$components/system';
+
 	import { topbarVariant } from '$stores/system/topbar';
 	import { navigationActive } from '$stores/system/navigation';
 
-	import { PLATFORM_DOMAIN } from '$constants/platform';
+	import { PLATFORM_DOMAIN } from '$constants/util/platform';
+	import { MCGOBLIN_URL } from '$constants/applications/mcgoblin';
 
 	onMount(() => {
 		$topbarVariant = 'light';
@@ -13,6 +16,7 @@
 	});
 </script>
 
+<PageMeta title="McGoblin" />
 <section class="mcgoblin" {...$$restProps}>
 	<AppWrapper>
 		<div class="container">
@@ -33,9 +37,9 @@
 				<div class="action">
 					<Button
 						element="a"
-						href={`https://opensea.io/collection/mcgoblinwtf?ref=${PLATFORM_DOMAIN}`}
+						href={`${MCGOBLIN_URL}?ref=${PLATFORM_DOMAIN}`}
 						target="_blank"
-						background="#fe8882"
+						backgroundColor="#fe8882"
 					>
 						<span>Browse menu</span>
 					</Button>

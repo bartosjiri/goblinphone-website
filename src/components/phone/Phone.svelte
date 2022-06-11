@@ -54,7 +54,6 @@
 				@include transition($transition--primary, max-height);
 
 				@include breakpoint($breakpoint--mobile) {
-					max-height: calc(100vh - $bottom-offset);
 					max-width: 240vw;
 				}
 			}
