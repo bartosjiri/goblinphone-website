@@ -2,7 +2,7 @@ import { PLATFORM_DOMAIN } from "./platform";
 
 export const META_TITLE = 'Goblin Phone';
 export const META_DESCRIPTION = 'tʰₑ ⁿₑwₑsᵗ ᵖiᵉcᵉ ₒf tₑcʰ ᵸᵃs ₐʳʳᶤᵥₑd ᵢnto ᵗᵸₑ gᵒbˡᶤn tᵒwⁿ!';
-export const META_KEYWORDS = ['goblin', 'goblintown', 'goblingrlz', 'mcgoblin', 'phone'];
+export const META_KEYWORDS = ['goblin', 'goblintown', 'goblingrlz', 'mcgoblin', 'phone', 'bartosjiri'];
 
 export const META_THEME_COLOR = '#ffffff';
 export const META_APPLE_COLOR = '#aaa565';

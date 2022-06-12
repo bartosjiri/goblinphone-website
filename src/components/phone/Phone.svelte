@@ -1,13 +1,15 @@
 <script lang="ts">
 	import Thumb from './Thumb.svelte';
 
+	import { goblingirlFocused } from '$stores/goblingirl/focus';
+
 	let display: HTMLElement;
 	let displayWidth: number;
 
 	const DISPLAY_WIDTH_MAX = 414;
 </script>
 
-<div class:phone={true} {...$$restProps}>
+<div class:phone={true} class:--unfocused={$goblingirlFocused} {...$$restProps}>
 	<Thumb bind:display />
 	<div class="bezel">
 		<img src="/assets/images/phone/bezel.png" alt="" />
@@ -34,7 +36,8 @@
 		bottom: -10%;
 		left: 100%;
 		transform: translateX(-100%) rotate(-10deg);
-		@include transition($transition--primary, transform, left, bottom);
+		@include transition($transition--primary, transform, left, bottom, filter);
+		pointer-events: none;
 
 		@include breakpoint($breakpoint--mobile) {
 			left: 50%;
@@ -68,6 +71,7 @@
 			color: $color-text--primary;
 			background: $color-background--primary;
 			overflow-y: auto;
+			pointer-events: all;
 			z-index: 2;
 
 			:global(*::selection) {
@@ -100,6 +104,11 @@
 			img {
 				opacity: 0;
 			}
+		}
+
+		&.--unfocused {
+			filter: blur(4px);
+			transform: translateX(-80%);
 		}
 	}
 </style>

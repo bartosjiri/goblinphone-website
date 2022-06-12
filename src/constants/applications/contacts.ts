@@ -18,4 +18,9 @@ export const CONTACTS_DEFAULT = [
     href: "https://twitter.com/_wampa__stompa",
     imageUrl: "/assets/images/applications/contacts/contact-wampastompa.png",
   },
+  {
+    name: "Peetricia",
+    description: "GF",
+    imageUrl: "/assets/images/applications/contacts/contact-goblingirl.png",
+  }
 ]

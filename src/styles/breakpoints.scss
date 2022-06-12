@@ -1,4 +1,5 @@
 $breakpoint--mobile: 975;
+$breakpoint--goblingirl: 1300;
 
 @mixin breakpoint($size) {
 	@media only screen and (max-width: #{$size}px) {

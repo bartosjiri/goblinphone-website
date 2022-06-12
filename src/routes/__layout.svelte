@@ -5,6 +5,8 @@
 	import { TopBar, Navigation, Lockscreen } from '$components/system';
 	import { Scene, Background, Ground } from '$components/environment';
 
+	import { Goblingirl } from '$components/goblingirl';
+
 	import '../styles/__global.scss';
 </script>
 
@@ -18,6 +20,7 @@
 			<slot />
 			<Navigation />
 		</Phone>
+		<Goblingirl />
 	</Scene>
 	<Ground />
 	<Background />
