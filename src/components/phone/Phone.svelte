@@ -9,8 +9,8 @@
 
 <div class:phone={true} {...$$restProps}>
 	<Thumb bind:display />
-	<div class="foreground">
-		<img src="/assets/images/phone/foreground.png" alt="Phone foreground" />
+	<div class="bezel">
+		<img src="/assets/images/phone/bezel.png" alt="" />
 	</div>
 	<div
 		bind:this={display}
@@ -21,7 +21,7 @@
 		<slot />
 	</div>
 	<div class="background">
-		<img src="/assets/images/phone/background.png" alt="Phone background" />
+		<img src="/assets/images/phone/background.png" alt="" />
 	</div>
 	<div class="space-keeper">
 		<img src="/assets/images/phone/background.png" alt="" />
@@ -30,10 +30,8 @@
 
 <style lang="scss">
 	.phone {
-		$bottom-offset: -75px;
-
 		position: fixed;
-		bottom: $bottom-offset;
+		bottom: -10%;
 		left: 100%;
 		transform: translateX(-100%) rotate(-10deg);
 		@include transition($transition--primary, transform, left, bottom);
@@ -44,7 +42,7 @@
 		}
 
 		:global(.thumb),
-		.foreground,
+		.bezel,
 		.background,
 		.space-keeper {
 			:global(img) {
@@ -54,7 +52,7 @@
 				@include transition($transition--primary, max-height);
 
 				@include breakpoint($breakpoint--mobile) {
-					max-width: 240vw;
+					max-width: 260vw;
 				}
 			}
 		}
@@ -62,9 +60,9 @@
 		.content {
 			position: absolute;
 			top: 4%;
-			bottom: 19%;
-			left: 32%;
-			right: 32%;
+			bottom: 18%;
+			left: 34%;
+			right: 34%;
 			display: flex;
 			flex-direction: column;
 			color: $color-text--primary;
@@ -78,7 +76,7 @@
 		}
 
 		:global(.thumb),
-		.foreground,
+		.bezel,
 		.background {
 			position: absolute;
 			top: 0;
@@ -90,7 +88,7 @@
 			z-index: 4;
 		}
 
-		.foreground {
+		.bezel {
 			z-index: 3;
 		}
 

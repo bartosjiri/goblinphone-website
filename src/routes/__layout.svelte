@@ -1,19 +1,20 @@
 <script>
 	import { Phone } from '$components/phone';
-	import { TopBar, Navigation, Lockscreen, Playback } from '$components/system';
-	import { Background, Ground } from '$components/environment';
+	import { TopBar, Navigation, Lockscreen } from '$components/system';
+	import { Scene, Background, Ground } from '$components/environment';
 
 	import '../styles/__global.scss';
 </script>
 
 <main>
-	<Phone>
-		<Lockscreen />
-		<TopBar />
-		<slot />
-		<Navigation />
-		<!-- <Playback /> -->
-	</Phone>
+	<Scene>
+		<Phone>
+			<Lockscreen />
+			<TopBar />
+			<slot />
+			<Navigation />
+		</Phone>
+	</Scene>
 	<Ground />
 	<Background />
 </main>
@@ -22,7 +23,7 @@
 	:global(main) {
 		position: relative;
 		max-width: 100vw;
-		max-height: 100vh;
+		height: 100vh;
 		overflow: hidden;
 	}
 </style>
