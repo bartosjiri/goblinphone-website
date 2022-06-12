@@ -32,19 +32,27 @@
 				iconUrl="/assets/images/applications/gobble-translate/appicon.png"
 				href="/gobble-translate"
 			/>
-			<AppIcon title="Goblify" installing />
+			<AppIcon
+				title="Goblify"
+				iconUrl="/assets/images/applications/goblify/appicon.png"
+				installing
+			/>
 			<AppIcon
 				title="MySnakes"
 				iconUrl="/assets/images/applications/mysnakes/appicon.png"
 				href="/mysnakes"
 			/>
-			<AppIcon title="Instagob" installing />
+			<AppIcon
+				title="Gobgram"
+				iconUrl="/assets/images/applications/gobgram/appicon.png"
+				installing
+			/>
 			<AppIcon
 				title="McGoblin"
 				iconUrl="/assets/images/applications/mcgoblin/appicon.png"
 				href="/mcgoblin"
 			/>
-			<AppIcon title="Gobr" installing />
+			<AppIcon title="Gobr" iconUrl="/assets/images/applications/gobr/appicon.png" installing />
 		</AppIconsGrid>
 	</AppWrapper>
 	<div class="background">

@@ -26,6 +26,9 @@
 <section class="mysnakes" on:click={handleClick} {...$$restProps}>
 	<div class="overlay" />
 	<iframe src={MYSNAKES_URL} title="MySnakes" />
+	<div class="loading">
+		<span>Loading...</span>
+	</div>
 </section>
 
 <style lang="scss">
@@ -44,13 +47,33 @@
 			bottom: 0;
 			left: 0;
 			right: 0;
-			z-index: 1;
+			z-index: 3;
 			cursor: pointer;
 		}
 
 		iframe {
 			position: relative;
 			height: 100%;
+			z-index: 2;
+		}
+
+		.loading {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			z-index: 1;
+
+			span {
+				font-size: 0.4em;
+				font-weight: $font-weight--bold;
+				text-align: center;
+			}
 		}
 	}
 </style>

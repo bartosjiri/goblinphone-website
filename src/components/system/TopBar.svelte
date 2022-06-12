@@ -35,6 +35,7 @@
 		right: 0;
 		display: flex;
 		z-index: 100;
+		pointer-events: none;
 
 		.container {
 			display: flex;

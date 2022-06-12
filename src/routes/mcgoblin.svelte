@@ -32,7 +32,7 @@
 					/>
 				</div>
 				<div class="text">
-					<p>Sorry, we currently do not deliver to your location :(</p>
+					<p>We currently do not deliver to your location, sucker</p>
 				</div>
 				<div class="action">
 					<Button
