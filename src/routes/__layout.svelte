@@ -1,10 +1,14 @@
 <script>
+	import { Analytics } from '$util/analytics';
+
 	import { Phone } from '$components/phone';
 	import { TopBar, Navigation, Lockscreen } from '$components/system';
 	import { Scene, Background, Ground } from '$components/environment';
 
 	import '../styles/__global.scss';
 </script>
+
+<Analytics />
 
 <main>
 	<Scene>
