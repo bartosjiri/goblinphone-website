@@ -2,11 +2,16 @@
 	export let href: string | undefined = undefined;
 	export let title: string;
 	export let iconUrl: string | undefined = undefined;
-	export let installing: boolean = false;
+	export let downloading: boolean = false;
 </script>
 
 <div class:app-icon={true} {...$$restProps}>
-	<a class="link" class:--installing={installing} href={installing ? '' : href} sveltekit:prefetch>
+	<a
+		class="link"
+		class:--downloading={downloading}
+		href={downloading ? '' : href}
+		sveltekit:prefetch
+	>
 		<div class="icon">
 			<img
 				src={iconUrl || `/assets/images/applications/homescreen/appicon-placeholder.png`}
@@ -14,7 +19,7 @@
 			/>
 		</div>
 		<div class="title">
-			<span>{installing ? 'Installing...' : title}</span>
+			<span>{downloading ? 'Down-loading...' : title}</span>
 		</div>
 	</a>
 </div>
@@ -87,8 +92,8 @@
 				}
 			}
 
-			&.--installing {
-				$installing-title-background: #a1a1a1;
+			&.--downloading {
+				$downloading-title-background: #a1a1a1;
 				cursor: default;
 
 				.icon {
@@ -96,7 +101,8 @@
 				}
 
 				.title {
-					background: $installing-title-background;
+					// font-size: 0.15em;
+					background: $downloading-title-background;
 				}
 
 				&:hover {
@@ -111,7 +117,7 @@
 					}
 
 					.title {
-						background: $installing-title-background;
+						background: $downloading-title-background;
 						filter: $link-title-filter;
 					}
 				}

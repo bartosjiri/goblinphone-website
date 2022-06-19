@@ -35,7 +35,7 @@
 			<AppIcon
 				title="Goblify"
 				iconUrl="/assets/images/applications/goblify/appicon.png"
-				installing
+				downloading
 			/>
 			<AppIcon
 				title="MySnakes"
@@ -52,7 +52,7 @@
 				iconUrl="/assets/images/applications/mcgoblin/appicon.png"
 				href="/mcgoblin"
 			/>
-			<AppIcon title="Gobr" iconUrl="/assets/images/applications/gobr/appicon.png" installing />
+			<AppIcon title="Gobr" iconUrl="/assets/images/applications/gobr/appicon.png" downloading />
 		</AppIconsGrid>
 	</AppWrapper>
 	<div class="background">

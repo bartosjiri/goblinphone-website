@@ -16,7 +16,7 @@
 			<span>Create a new post</span>
 		</div>
 		<div class="description">
-			<span>You can add a new post by including one of the following hashtags:</span>
+			<span>You can add a new post by including a photo and one of the following hashtags:</span>
 			<!-- {#each GOBGRAM_HANDLES as handle}
 				<p class="hashtag">@{handle}</p>
 			{/each} -->

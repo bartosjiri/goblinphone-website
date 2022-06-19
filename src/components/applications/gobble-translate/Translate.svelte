@@ -71,7 +71,9 @@
 			textarea {
 				font-family: sans-serif;
 				color: $color-text--primary;
+				-webkit-text-fill-color: $color-text--primary;
 				background: #ffffff;
+				opacity: 1 !important;
 			}
 		}
 
