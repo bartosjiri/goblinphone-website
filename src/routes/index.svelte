@@ -45,7 +45,7 @@
 			<AppIcon
 				title="Gobgram"
 				iconUrl="/assets/images/applications/gobgram/appicon.png"
-				installing
+				href="/gobgram"
 			/>
 			<AppIcon
 				title="McGoblin"
