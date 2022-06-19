@@ -35,8 +35,8 @@ const fetchPosts = async (_: VercelRequest, res: VercelResponse): Promise<Vercel
     for (const item of data.data) {
       const tweet = {
         id: item.id,
-        description: item.text,
-        imageUrl: data.includes.media.find(media => media.media_key == item.attachments.media_keys[0])?.url,
+        description: item.text?.replace(/(?:https?|ftp):\/\/[\n\S]+/g, ""),
+        imageUrl: data.includes.media?.find(media => media.media_key == item.attachments.media_keys[0])?.url,
         likes: item.public_metrics.like_count,
         replies: item.public_metrics.reply_count
       }
