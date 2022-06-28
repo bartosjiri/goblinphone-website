@@ -1,6 +1,7 @@
 export const GOBGRAM_HASHTAGS = [
-  // "goblintown",
-  "goblingrlzwtf",
+  "goblintown",
+  "goblingrlz",
+  // "goblingrlzwtf",
   "mygoblingrlz",
   "goblinphone",
   "gobgram",
