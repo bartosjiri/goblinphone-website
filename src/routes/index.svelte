@@ -52,7 +52,11 @@
 				iconUrl="/assets/images/applications/mcgoblin/appicon.png"
 				href="/mcgoblin"
 			/>
-			<AppIcon title="Gobr" iconUrl="/assets/images/applications/gobr/appicon.png" downloading />
+			<AppIcon
+				title="Goblr"
+				iconUrl="/assets/images/applications/goblr/appicon.png"
+				href="/goblr"
+			/>
 		</AppIconsGrid>
 	</AppWrapper>
 	<div class="background">

@@ -57,7 +57,7 @@
 		left: 0;
 		right: 0;
 		height: 100%;
-		z-index: 1000;
+		z-index: 9999;
 		transition: transform 0.5s ease-in-out;
 		border-bottom-left-radius: 8px;
 		border-bottom-right-radius: 8px;
