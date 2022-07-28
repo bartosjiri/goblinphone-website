@@ -35,7 +35,7 @@
 			<AppIcon
 				title="Goblify"
 				iconUrl="/assets/images/applications/goblify/appicon.png"
-				downloading
+				href="/goblify"
 			/>
 			<AppIcon
 				title="MySnakes"

@@ -1,1 +1,21 @@
-export { default as GoblifyWidget } from './Widget.svelte';
+export { default as Playback } from './Playback.svelte';
+export { default as Player } from "./Player.svelte";
+export { default as Playlist } from "./Playlist.svelte";
+
+export {
+  audioElement,
+  sourceElement,
+  trackIndex,
+  trackLength,
+  trackProgress,
+  trackIndexesHistory,
+  isPlaying,
+  isShuffling,
+  isRepeating,
+  playlistActive,
+  play,
+  pause,
+  next,
+  previous,
+  load,
+} from "./managePlayback"
