@@ -4,6 +4,7 @@
 	import { Phone } from '$components/phone';
 	import { TopBar, Navigation, Lockscreen } from '$components/system';
 	import { Scene, Background, Ground } from '$components/environment';
+	import { Playback } from '$components/applications/goblify';
 
 	import { Goblingirl } from '$components/goblingirl';
 
@@ -19,6 +20,7 @@
 			<TopBar />
 			<slot />
 			<Navigation />
+			<Playback />
 		</Phone>
 		<Goblingirl />
 	</Scene>

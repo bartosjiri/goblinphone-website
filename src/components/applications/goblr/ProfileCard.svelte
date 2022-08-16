@@ -74,7 +74,6 @@
 	};
 
 	const onGestureStart = (e: MouseEvent | TouchEvent) => {
-		console.log('onGestureStart');
 		if (!swipable) return;
 
 		pullDeltaXPercentage = 0;
