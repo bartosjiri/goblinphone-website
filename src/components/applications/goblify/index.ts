@@ -12,6 +12,7 @@ export {
   isPlaying,
   isShuffling,
   isRepeating,
+  playlistTracks,
   playlistActive,
   play,
   pause,

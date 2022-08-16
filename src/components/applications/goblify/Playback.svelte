@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	import { audioElement, sourceElement, trackProgress, load } from '.';
+	import { audioElement, sourceElement, trackProgress, playlistTracks, load } from '.';
 
 	let audio: HTMLAudioElement;
 	let source: HTMLSourceElement;
@@ -9,8 +9,9 @@
 	onMount(() => {
 		$audioElement = audio;
 		$sourceElement = source;
-		load();
 	});
+
+	$: if ($playlistTracks.length) load();
 </script>
 
 <audio bind:this={audio} bind:currentTime={$trackProgress}>

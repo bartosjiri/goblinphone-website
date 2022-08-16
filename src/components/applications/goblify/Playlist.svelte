@@ -1,12 +1,10 @@
 <script lang="ts">
-	import { GOBLIFY_TRACKS } from '$constants/applications/goblify';
-
-	import { trackIndex, next } from '.';
+	import { trackIndex, playlistTracks, next } from '.';
 </script>
 
 <div class="playlist">
 	<div class="list">
-		{#each GOBLIFY_TRACKS as track, index}
+		{#each $playlistTracks as track, index}
 			<div class="track" class:--playing={$trackIndex === index} on:click={() => next(index)}>
 				<div class="art">
 					<img src={track.coverArtUrl} alt="" />
@@ -35,12 +33,13 @@
 		overflow: hidden;
 
 		.list {
+			height: 100%;
 			overflow-y: auto;
 
 			.track {
 				display: grid;
 				grid-template-columns: auto 1fr auto;
-				grid-template-rows: 1fr 1fr;
+				grid-template-rows: auto auto;
 				column-gap: 0.15em;
 				row-gap: 0.1em;
 				cursor: pointer;
@@ -70,7 +69,7 @@
 					display: flex;
 
 					span {
-						font-size: 0.35em;
+						font-size: 0.3em;
 						line-height: 1;
 					}
 				}
@@ -81,7 +80,7 @@
 					display: flex;
 
 					span {
-						font-size: 0.25em;
+						font-size: 0.225em;
 						line-height: 1;
 						color: rgba(#ffffff, 0.75);
 					}

@@ -7,6 +7,7 @@
 		isRepeating,
 		trackProgress,
 		trackLength,
+		playlistTracks,
 		play,
 		pause,
 		next,
@@ -15,7 +16,6 @@
 
 	import { dayjs } from '$util/dayjs';
 
-	import { GOBLIFY_TRACKS } from '$constants/applications/goblify';
 	import { PLATFORM_DOMAIN } from '$constants/util/platform';
 
 	let timeline: HTMLElement;
@@ -43,17 +43,17 @@
 <div class="player">
 	<a
 		class="metadata"
-		href={`${GOBLIFY_TRACKS[$trackIndex].artistUrl}?ref=${PLATFORM_DOMAIN}`}
+		href={`${$playlistTracks[$trackIndex]?.artistUrl}?ref=${PLATFORM_DOMAIN}`}
 		target="_blank"
 	>
 		<div class="art">
-			<img src={GOBLIFY_TRACKS[$trackIndex].coverArtUrl} alt="" />
+			<img src={$playlistTracks[$trackIndex]?.coverArtUrl} alt="" />
 		</div>
 		<div class="title">
-			<span>{GOBLIFY_TRACKS[$trackIndex].title}</span>
+			<span>{$playlistTracks[$trackIndex]?.title}</span>
 		</div>
 		<div class="artist">
-			<span>{GOBLIFY_TRACKS[$trackIndex].artist}</span>
+			<span>{$playlistTracks[$trackIndex]?.artist}</span>
 		</div>
 	</a>
 	<div class="timeline" bind:this={timeline} on:click={handleTimelineClick}>
@@ -102,7 +102,11 @@
 
 <style lang="scss">
 	.player {
+		display: flex;
+		flex-direction: column;
+
 		.metadata {
+			flex-grow: 1;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
@@ -131,6 +135,7 @@
 
 				span {
 					font-size: 0.4em;
+					line-height: 1;
 					color: #ffffff;
 				}
 			}
@@ -141,6 +146,7 @@
 
 				span {
 					font-size: 0.325em;
+					line-height: 1;
 					color: rgba(#ffffff, 0.75);
 				}
 			}

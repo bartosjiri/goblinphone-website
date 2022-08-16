@@ -2,12 +2,9 @@ import { writable, get } from "svelte/store";
 
 import type { Writable } from "svelte/store";
 
-import { GOBLIFY_TRACKS } from '$constants/applications/goblify';
-
 export type Track = {
   title: string,
   artist: string,
-  url: string,
   audioUrl: string,
   coverArtUrl: string,
   artistUrl: string
@@ -25,6 +22,7 @@ export const isPlaying = writable(false);
 export const isShuffling = writable(true);
 export const isRepeating = writable(false);
 
+export const playlistTracks: Writable<Track[]> = writable([]);
 export const playlistActive = writable(false);
 
 export const load = () => {
@@ -32,7 +30,8 @@ export const load = () => {
   const source = get(sourceElement);
 
   if (audio && source) {
-    source.src = GOBLIFY_TRACKS[get(trackIndex)].audioUrl;
+    const tracks = get(playlistTracks);
+    source.src = tracks[get(trackIndex)].audioUrl;
     audio.load();
     audio.volume = 0.8;
     audio.ondurationchange = () => {
@@ -49,7 +48,8 @@ export const load = () => {
 }
 
 const generateRandomTrackIndex: (() => number) = () => {
-  const randomIndex = Math.floor(Math.random() * GOBLIFY_TRACKS.length);
+  const tracks = get(playlistTracks);
+  const randomIndex = Math.floor(Math.random() * tracks.length);
 
   if (randomIndex === get(trackIndex)) {
     return generateRandomTrackIndex();
@@ -102,7 +102,8 @@ export const next = (targetIndex: number | null = null) => {
     return switchToTrackIndex(randomIndex);
   }
 
-  const nextIndex = (currentIndex + 1 >= GOBLIFY_TRACKS.length) ? 0 : currentIndex + 1;
+  const tracks = get(playlistTracks);
+  const nextIndex = (currentIndex + 1 >= tracks.length) ? 0 : currentIndex + 1;
   switchToTrackIndex(nextIndex);
 }
 
@@ -116,7 +117,8 @@ export const previous = () => {
       return switchToTrackIndex(randomIndex, true)
     }
 
-    const prevIndex = (currentIndex - 1 < 0) ? GOBLIFY_TRACKS.length - 1 : currentIndex - 1;
+    const tracks = get(playlistTracks);
+    const prevIndex = (currentIndex - 1 < 0) ? tracks.length - 1 : currentIndex - 1;
     return switchToTrackIndex(prevIndex, true)
   }
 
