@@ -22,13 +22,3 @@ $font-weight--bold: 700;
 	font-style: normal;
 	font-display: swap;
 }
-
-@font-face {
-	font-family: $font-family--secondary;
-	src: url('/fonts/JasonTerrific.woff2') format('woff2'),
-		url('/fonts/JasonTerrific.woff') format('woff'),
-		url('/fonts/JasonTerrific.ttf') format('truetype');
-	font-weight: $font-weight--regular;
-	font-style: normal;
-	font-display: swap;
-}
