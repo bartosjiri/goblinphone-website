@@ -1,1 +1,1 @@
-export { default as Goblingirl } from "./Goblingirl.svelte";
+export { default as Goblingirl } from './Goblingirl.svelte';

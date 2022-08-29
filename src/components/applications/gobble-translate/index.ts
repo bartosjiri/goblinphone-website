@@ -1,1 +1,1 @@
-export { default as Translate } from "./Translate.svelte";
+export { default as Translate } from './Translate.svelte';

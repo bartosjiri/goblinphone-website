@@ -1,1 +1,1 @@
-export const GOBLINGRLZ_URL = "https://opensea.io/collection/goblin-grlz";
+export const GOBLINGRLZ_URL = 'https://opensea.io/collection/goblin-grlz';

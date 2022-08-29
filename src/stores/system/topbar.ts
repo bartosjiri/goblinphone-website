@@ -1,5 +1,5 @@
-import { writable } from "svelte/store";
+import { writable } from 'svelte/store';
 
-type Variant = "light" | "dark";
+type Variant = 'light' | 'dark';
 
-export const topbarVariant = writable<Variant>("light");
+export const topbarVariant = writable<Variant>('light');

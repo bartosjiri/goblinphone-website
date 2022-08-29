@@ -1,6 +1,6 @@
-import { default as dayjs } from 'dayjs'
+import { default as dayjs } from 'dayjs';
 import duration from 'dayjs/plugin/duration.js';
 
-dayjs.extend(duration)
+dayjs.extend(duration);
 
-export default dayjs
+export default dayjs;
