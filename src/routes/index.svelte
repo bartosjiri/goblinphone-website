@@ -2,12 +2,12 @@
 	import { onMount } from 'svelte';
 
 	import { PageMeta } from '$util/meta';
-	import { AppWrapper } from '$components/system';
-	import { AppIconsGrid, AppIcon } from '$components/applications/homescreen';
+	import { AppWrapper } from '$components/phone/app-wrapper';
+	import { AppIconsGrid, AppIcon } from '$components/phone/homescreen';
 
-	import { topbarVariant } from '$stores/system/topbar';
-	import { navigationActive } from '$stores/system/navigation';
-	import { lockscreenActive } from '$stores/system/lockscreen';
+	import { topbarVariant } from '$components/phone/top-bar';
+	import { navigationActive } from '$components/phone/navigation';
+	import { lockscreenActive } from '$components/phone/lockscreen';
 
 	onMount(() => {
 		$navigationActive = false;
@@ -61,7 +61,7 @@
 	</AppWrapper>
 	<div class="background">
 		<div class="background">
-			<img src="/assets/images/system/lockscreen-background.jpg" alt="Homescreen background" />
+			<img src="/assets/images/phone/lockscreen/background.jpg" alt="" />
 		</div>
 	</div>
 </section>

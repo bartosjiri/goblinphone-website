@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 
-	import { Button } from '$components/system';
+	import { Button } from '$components/phone/button';
 
 	import type { Contact } from './.';
 
 	export let contact: Contact | undefined = undefined;
-	export let onSumbit: (contact: Contact) => void = () => {};
+	export let onSumbit: (contact: Contact) => void = () => undefined;
 	export let submitLabel: string;
 
 	$: name = contact?.name || '';

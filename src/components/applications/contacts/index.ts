@@ -7,6 +7,8 @@ export {
 	addContact,
 	updateContact,
 	deleteContact
-} from './manageContacts';
+} from './contacts.store';
 
-export type { Contact } from './Contact.types';
+export { CONTACTS_DEFAULT } from './contacts.constants';
+
+export type { Contact } from './contacts.types';

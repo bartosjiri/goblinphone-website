@@ -2,13 +2,14 @@
 	import { onMount } from 'svelte';
 
 	import { PageMeta } from '$util/meta';
-	import { AppWrapper, Button } from '$components/system';
+	import { AppWrapper } from '$components/phone/app-wrapper';
+	import { Button } from '$components/phone/button';
 
-	import { topbarVariant } from '$stores/system/topbar';
-	import { navigationActive } from '$stores/system/navigation';
+	import { topbarVariant } from '$components/phone/top-bar';
+	import { navigationActive } from '$components/phone/navigation';
 
-	import { PLATFORM_DOMAIN } from '$constants/util/platform';
-	import { MCGOBLIN_URL } from '$constants/applications/mcgoblin';
+	import { PLATFORM_DOMAIN } from '$config/platform';
+	import { MCGOBLIN_URL } from '$components/applications/mcgoblin';
 
 	onMount(() => {
 		$topbarVariant = 'light';
@@ -21,15 +22,11 @@
 	<AppWrapper>
 		<div class="container">
 			<div class="logo">
-				<img src="/assets/images/applications/mcgoblin/appicon.png" alt="McGoblin logo" />
+				<img src="/assets/images/applications/mcgoblin/appicon.png" alt="" />
 			</div>
 			<div class="notice">
 				<div class="image">
-					<img
-						src="/assets/images/applications/mcgoblin/unavailable.gif"
-						alt="Unavailable notice"
-						loading="lazy"
-					/>
+					<img src="/assets/images/applications/mcgoblin/unavailable.gif" alt="" loading="lazy" />
 				</div>
 				<div class="text">
 					<p>We currently do not deliver to your location, sucker</p>

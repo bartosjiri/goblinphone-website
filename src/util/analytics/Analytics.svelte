@@ -5,7 +5,7 @@
 
 	import * as Fathom from 'fathom-client';
 
-	import { ANALYTICS_SCRIPT_URL } from '$constants/util/analytics';
+	import { ANALYTICS_SCRIPT_URL } from '$config/analytics';
 
 	const trackingId = import.meta.env.VITE_FATHOM_ID;
 	if (trackingId) {

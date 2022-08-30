@@ -19,4 +19,6 @@ export {
 	next,
 	previous,
 	load
-} from './managePlayback';
+} from './goblify.store';
+
+export { GOBLIFY_TRACKS } from './goblify.constants';

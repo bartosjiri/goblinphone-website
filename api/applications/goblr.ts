@@ -2,9 +2,9 @@ import fetch from 'isomorphic-unfetch';
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
-import { GOBLR_COLLECTIONS } from '../../src/constants/applications/goblr';
+import { GOBLR_COLLECTIONS } from '../../src/components/applications/goblr/goblr.constants';
 
-import type { Profile } from '../../src/components/applications/goblr';
+import type { Profile } from '../../src/components/applications/goblr/goblr.types';
 
 const RARIBLE_API_URL = 'https://api.rarible.org/v0.1/items/ETHEREUM';
 const PROFILES_BATCH_COUNT = 10;

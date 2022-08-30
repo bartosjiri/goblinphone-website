@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	import { Button } from '$components/system';
+	import { Button } from '$components/phone/button';
 	import { ContactCard, loadContacts } from '$components/applications/contacts';
 
 	import type { Contact } from '$components/applications/contacts';

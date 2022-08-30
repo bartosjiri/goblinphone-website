@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	import { Button } from '$components/system';
+	import { Button } from '$components/phone/button';
 	import { loadStoredMatches, deleteMatch } from '$components/applications/goblr';
 
 	import type { Profile } from '$components/applications/goblr';
 
-	import { GOBLR_URL_BASE } from '$constants/applications/goblr';
-	import { PLATFORM_DOMAIN } from '$constants/util/platform';
+	import { GOBLR_URL_BASE } from '$components/applications/goblr';
+	import { PLATFORM_DOMAIN } from '$config/platform';
 
 	let matches: Profile[] = [];
 
@@ -38,10 +38,10 @@
 							href={`${GOBLR_URL_BASE}/${match.contractAddress}/${match.tokenId}/?ref=${PLATFORM_DOMAIN}`}
 							target="_blank"
 						>
-							<img src="/assets/images/applications/contacts/action-link.png" alt="Open" />
+							<img src="/assets/images/applications/contacts/action-link.png" alt="" />
 						</a>
 						<div class="action" on:click={() => handleDelete(match)}>
-							<img src="/assets/images/applications/contacts/action-delete.png" alt="Remove" />
+							<img src="/assets/images/applications/contacts/action-delete.png" alt="" />
 						</div>
 					</div>
 				</div>

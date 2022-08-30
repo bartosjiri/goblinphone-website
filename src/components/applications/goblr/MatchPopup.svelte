@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { fly, fade } from 'svelte/transition';
 
-	import { Button } from '$components/system';
+	import { Button } from '$components/phone/button';
 
 	import { popupMatch } from '.';
 
-	import { GOBLR_URL_BASE } from '$constants/applications/goblr';
-	import { PLATFORM_DOMAIN } from '$constants/util/platform';
+	import { GOBLR_URL_BASE } from '$components/applications/goblr';
+	import { PLATFORM_DOMAIN } from '$config/platform';
 
 	const handleClose = () => {
 		$popupMatch = null;

@@ -2,9 +2,9 @@ import fetch from 'isomorphic-unfetch';
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
-import { GOBGRAM_HASHTAGS } from '../../src/constants/applications/gobgram';
+import { GOBGRAM_HASHTAGS } from '../../src/components/applications/gobgram/gobgram.constants';
 
-import type { Post } from '../../src/components/applications/gobgram';
+import type { Post } from '../../src/components/applications/gobgram/gobgram.types';
 
 const TWITTER_SEARCH_URL = 'https://api.twitter.com/2/tweets/search/recent';
 

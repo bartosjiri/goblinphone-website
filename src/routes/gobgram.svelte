@@ -2,7 +2,8 @@
 	import { onMount } from 'svelte';
 
 	import { PageMeta } from '$util/meta';
-	import { AppWrapper, Button } from '$components/system';
+	import { AppWrapper } from '$components/phone/app-wrapper';
+	import { Button } from '$components/phone/button';
 
 	import {
 		PostCard,
@@ -14,8 +15,8 @@
 		getPosts
 	} from '$components/applications/gobgram';
 
-	import { topbarVariant } from '$stores/system/topbar';
-	import { navigationActive } from '$stores/system/navigation';
+	import { topbarVariant } from '$components/phone/top-bar';
+	import { navigationActive } from '$components/phone/navigation';
 
 	onMount(async () => {
 		$topbarVariant = 'dark';

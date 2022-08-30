@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { deleteContact } from '.';
 
-	import { PLATFORM_DOMAIN } from '$constants/util/platform';
+	import { PLATFORM_DOMAIN } from '$config/platform';
 
 	import type { Contact } from '.';
 
@@ -53,17 +53,17 @@
 			href={href ? `${contact.href}?ref=${PLATFORM_DOMAIN}` : null}
 			target="_blank"
 		>
-			<img src="/assets/images/applications/contacts/action-link.png" alt="Open" />
+			<img src="/assets/images/applications/contacts/action-link.png" alt="" />
 		</a>
 		<a
 			class="action"
 			class:--disabled={!deletable}
 			href={deletable ? `/contacts/edit/${id}` : null}
 		>
-			<img src="/assets/images/applications/contacts/action-edit.png" alt="Edit" />
+			<img src="/assets/images/applications/contacts/action-edit.png" alt="" />
 		</a>
 		<div class="action" class:--disabled={!deletable} on:click={handleDelete}>
-			<img src="/assets/images/applications/contacts/action-delete.png" alt="Delete" />
+			<img src="/assets/images/applications/contacts/action-delete.png" alt="" />
 		</div>
 	</div>
 </div>

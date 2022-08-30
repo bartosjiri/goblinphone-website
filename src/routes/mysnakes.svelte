@@ -3,11 +3,11 @@
 
 	import { PageMeta } from '$util/meta';
 
-	import { topbarVariant } from '$stores/system/topbar';
-	import { navigationActive } from '$stores/system/navigation';
+	import { topbarVariant } from '$components/phone/top-bar';
+	import { navigationActive } from '$components/phone/navigation';
 
-	import { PLATFORM_DOMAIN } from '$constants/util/platform';
-	import { MYSNAKES_URL } from '$constants/applications/mysnakes';
+	import { PLATFORM_DOMAIN } from '$config/platform';
+	import { MYSNAKES_URL } from '$components/applications/mysnakes';
 
 	const handleClick = (e: MouseEvent) => {
 		e.preventDefault();
