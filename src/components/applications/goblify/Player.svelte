@@ -16,7 +16,7 @@
 
 	import { dayjs } from '$util/dayjs';
 
-	import { PLATFORM_DOMAIN } from '$constants/util/platform';
+	import { PLATFORM_DOMAIN } from '$config/platform';
 
 	let timeline: HTMLElement;
 

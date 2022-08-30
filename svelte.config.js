@@ -29,6 +29,7 @@ const config = {
 				alias: {
 					$assets: resolve('./static/assets'),
 					$components: resolve('./src/components'),
+					$config: resolve('./src/config'),
 					$constants: resolve('./src/constants'),
 					$content: resolve('./src/content'),
 					$helpers: resolve('./src/helpers'),

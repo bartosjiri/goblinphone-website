@@ -2,11 +2,11 @@
 	import { onMount } from 'svelte';
 
 	import { PageMeta } from '$util/meta';
-	import { AppWrapper } from '$components/system';
+	import { AppWrapper } from '$components/phone/app-wrapper';
 	import { Translate } from '$components/applications/gobble-translate';
 
-	import { topbarVariant } from '$stores/system/topbar';
-	import { navigationActive } from '$stores/system/navigation';
+	import { topbarVariant } from '$components/phone/top-bar';
+	import { navigationActive } from '$components/phone/navigation';
 
 	onMount(() => {
 		$topbarVariant = 'dark';
@@ -20,10 +20,7 @@
 		<div class="container">
 			<div class="header">
 				<div class="logo">
-					<img
-						src="/assets/images/applications/gobble-translate/appicon.png"
-						alt="Gobble Translate logo"
-					/>
+					<img src="/assets/images/applications/gobble-translate/appicon.png" alt="" />
 				</div>
 				<div class="title">
 					<span>Gobble Translate</span>

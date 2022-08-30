@@ -1,12 +1,15 @@
 <script>
 	import { Analytics } from '$util/analytics';
 
-	import { Phone } from '$components/phone';
-	import { TopBar, Navigation, Lockscreen } from '$components/system';
-	import { Scene, Background, Ground } from '$components/environment';
+	import { Device } from '$components/environment/device';
+	import { TopBar } from '$components/phone/top-bar';
+	import { Navigation } from '$components/phone/navigation';
+	import { Lockscreen } from '$components/phone/lockscreen';
+	import { Scene } from '$components/environment/scene';
+	import { Background } from '$components/environment/background';
+	import { Ground } from '$components/environment/ground';
+	import { GoblinGirl } from '$components/environment/goblin-girl';
 	import { Playback } from '$components/applications/goblify';
-
-	import { Goblingirl } from '$components/goblingirl';
 
 	import '../styles/__global.scss';
 </script>
@@ -15,14 +18,14 @@
 
 <main>
 	<Scene>
-		<Phone>
+		<Device>
 			<Lockscreen />
 			<TopBar />
 			<slot />
 			<Navigation />
 			<Playback />
-		</Phone>
-		<Goblingirl />
+		</Device>
+		<GoblinGirl />
 	</Scene>
 	<Ground />
 	<Background />

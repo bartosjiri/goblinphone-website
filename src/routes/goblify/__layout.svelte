@@ -2,13 +2,13 @@
 	import { onMount } from 'svelte';
 
 	import { PageMeta } from '$util/meta';
-	import { AppWrapper } from '$components/system';
-	import { Button } from '$components/system';
+	import { AppWrapper } from '$components/phone/app-wrapper';
+	import { Button } from '$components/phone/button';
 
 	import { playlistActive } from '$components/applications/goblify';
 
-	import { topbarVariant } from '$stores/system/topbar';
-	import { navigationActive } from '$stores/system/navigation';
+	import { topbarVariant } from '$components/phone/top-bar';
+	import { navigationActive } from '$components/phone/navigation';
 
 	onMount(async () => {
 		$topbarVariant = 'light';
@@ -27,7 +27,7 @@
 			<div class="header">
 				<div class="app">
 					<div class="logo">
-						<img src="/assets/images/applications/goblify/appicon.png" alt="Goblify logo" />
+						<img src="/assets/images/applications/goblify/appicon.png" alt="" />
 					</div>
 					<div class="title">
 						<span>Goblify</span>

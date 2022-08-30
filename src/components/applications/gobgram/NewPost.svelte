@@ -1,9 +1,7 @@
 <script lang="ts">
-	import { Button } from '$components/system';
+	import { Button } from '$components/phone/button';
 
-	import { newPostActive } from '.';
-
-	import { GOBGRAM_HASHTAGS } from '$constants/applications/gobgram';
+	import { newPostActive, GOBGRAM_HASHTAGS } from '.';
 
 	const handleClose = () => {
 		$newPostActive = false;

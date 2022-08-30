@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { Post } from './Gobgram.types';
+	import { PLATFORM_DOMAIN } from '$config/platform';
 
-	import { PLATFORM_DOMAIN } from '$constants/util/platform';
+	import type { Post } from '.';
 
 	export let post: Post;
 </script>

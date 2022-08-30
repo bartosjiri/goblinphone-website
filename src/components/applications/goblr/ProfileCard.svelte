@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	import type { Profile } from '.';
+	import { popupMatch, addMatch, removeCurrentProfile } from '.';
 
-	import { popupMatch, addMatch, removeCurrentProfile } from '$components/applications/goblr';
+	import type { Profile } from '.';
 
 	export let profile: Profile;
 	export let swipable: boolean;
@@ -26,7 +26,7 @@
 	const matchScore = Math.random();
 
 	const onGestureMove = (e: MouseEvent | TouchEvent) => {
-		const pointerX = e.pageX || e.touches[0].pageX;
+		const pointerX = 'touches' in e ? e.touches[0].pageX : e.pageX;
 		let pullDeltaX = pointerX - startX;
 		if (!pullDeltaX) return;
 
@@ -78,7 +78,7 @@
 
 		pullDeltaXPercentage = 0;
 
-		startX = e.pageX || e.touches[0].pageX;
+		startX = 'touches' in e ? e.touches[0].pageX : e.pageX;
 
 		window?.addEventListener('mousemove', onGestureMove, true);
 		window?.addEventListener('touchmove', onGestureMove, true);

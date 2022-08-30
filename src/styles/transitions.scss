@@ -1,17 +1,15 @@
 @mixin transition($type, $props...) {
-  $result: ();
+	$result: ();
 
-  @each $prop in $props {
-    @if length($result)>0 {
-      $result: append($result, unquote(",") #{$prop} $type);
-    }
+	@each $prop in $props {
+		@if length($result) >0 {
+			$result: append($result, unquote(',') #{$prop} $type);
+		} @else {
+			$result: append($result, #{$prop} $type);
+		}
+	}
 
-    @else {
-      $result: append($result, #{$prop} $type);
-    }
-  }
-
-  transition: $result;
+	transition: $result;
 }
 
 $transition--primary: 175ms ease-in-out;

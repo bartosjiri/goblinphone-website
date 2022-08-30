@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button } from '$components/system';
+	import { Button } from '$components/phone/button';
 	import {
 		ProfileCard,
 		MatchPopup,

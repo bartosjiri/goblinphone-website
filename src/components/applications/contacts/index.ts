@@ -1,12 +1,14 @@
-export { default as ContactCard } from "./ContactCard.svelte";
-export { default as ContactForm } from "./ContactForm.svelte";
+export { default as ContactCard } from './ContactCard.svelte';
+export { default as ContactForm } from './ContactForm.svelte';
 
 export {
-  loadContacts,
-  loadContact,
-  addContact,
-  updateContact,
-  deleteContact
-} from "./manageContacts";
+	loadContacts,
+	loadContact,
+	addContact,
+	updateContact,
+	deleteContact
+} from './contacts.store';
 
-export type { Contact } from "./Contact.types";
+export { CONTACTS_DEFAULT } from './contacts.constants';
+
+export type { Contact } from './contacts.types';

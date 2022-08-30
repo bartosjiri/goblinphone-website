@@ -5,10 +5,9 @@
 		Player,
 		Playlist,
 		playlistTracks,
-		playlistActive
+		playlistActive,
+		GOBLIFY_TRACKS
 	} from '$components/applications/goblify';
-
-	import { GOBLIFY_TRACKS } from '$constants/applications/goblify';
 
 	onMount(() => {
 		if (!$playlistTracks.length) {

@@ -5,31 +5,20 @@ $font-weight--regular: 400;
 $font-weight--bold: 700;
 
 @font-face {
-  font-family: $font-family--primary;
-  src: url('/fonts/Unkempt.woff2') format('woff2'),
-    url('/fonts/Unkempt.woff') format('woff'),
-    url('/fonts/Unkempt.ttf') format('truetype');
-  font-weight: $font-weight--regular;
-  font-style: normal;
-  font-display: swap;
+	font-family: $font-family--primary;
+	src: url('/fonts/Unkempt.woff2') format('woff2'), url('/fonts/Unkempt.woff') format('woff'),
+		url('/fonts/Unkempt.ttf') format('truetype');
+	font-weight: $font-weight--regular;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: $font-family--primary;
-  src: url('/fonts/Unkempt-Bold.woff2') format('woff2'),
-    url('/fonts/Unkempt-Bold.woff') format('woff'),
-    url('/fonts/Unkempt-Bold.ttf') format('truetype');
-  font-weight: $font-weight--bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: $font-family--secondary;
-  src: url('/fonts/JasonTerrific.woff2') format('woff2'),
-    url('/fonts/JasonTerrific.woff') format('woff'),
-    url('/fonts/JasonTerrific.ttf') format('truetype');
-  font-weight: $font-weight--regular;
-  font-style: normal;
-  font-display: swap;
+	font-family: $font-family--primary;
+	src: url('/fonts/Unkempt-Bold.woff2') format('woff2'),
+		url('/fonts/Unkempt-Bold.woff') format('woff'),
+		url('/fonts/Unkempt-Bold.ttf') format('truetype');
+	font-weight: $font-weight--bold;
+	font-style: normal;
+	font-display: swap;
 }
