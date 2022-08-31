@@ -101,7 +101,7 @@
 					display: flex;
 
 					span {
-						font-size: 0.4em;
+						font-size: 0.35em;
 						font-weight: $font-weight--bold;
 						line-height: 1;
 						color: $content-color;

@@ -55,4 +55,4 @@ For deployment through any different provider solutions, custom API endpoints ha
 
 ## License
 
-The codebase and assets are licensed under [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed), except for audio assets (located in `static/assets/audio`) and font files (located in `static/fonts`) which are copyright of their respective owners.
+The codebase and assets are licensed under [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed), except for audio-related assets (located in `static/assets/audio` and `static/assets/images/applications/goblify/covers`) and font files (located in `static/fonts`) which are copyright of their respective owners.
