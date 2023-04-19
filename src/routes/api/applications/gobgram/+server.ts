@@ -1,14 +1,13 @@
-import fetch from 'isomorphic-unfetch';
+import { json, error } from '@sveltejs/kit';
+import type { RequestHandler } from '@sveltejs/kit';
 
-import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { env } from '$env/dynamic/private';
 
-import { GOBGRAM_HASHTAGS } from '../../src/components/applications/gobgram/gobgram.constants';
-
-import type { Post } from '../../src/components/applications/gobgram/gobgram.types';
+import { GOBGRAM_HASHTAGS, type Post } from '$components/applications/gobgram';
 
 const TWITTER_SEARCH_URL = 'https://api.twitter.com/2/tweets/search/recent';
 
-const fetchPosts = async (_: VercelRequest, res: VercelResponse): Promise<VercelResponse> => {
+export const GET: RequestHandler = async () => {
 	try {
 		const hashtags = GOBGRAM_HASHTAGS.map((tag) => `#${tag}`).join(' OR ');
 		// const handles = GOBGRAM_HANDLES.map(handle => `@${handle}`).join(" OR ")
@@ -26,7 +25,7 @@ const fetchPosts = async (_: VercelRequest, res: VercelResponse): Promise<Vercel
 
 		const response = await fetch(url, {
 			headers: {
-				Authorization: `Bearer ${process.env.TWITTER_API_TOKEN}`
+				Authorization: `Bearer ${env.TWITTER_API_TOKEN}`
 			}
 		});
 		const data = await response.json();
@@ -37,13 +36,13 @@ const fetchPosts = async (_: VercelRequest, res: VercelResponse): Promise<Vercel
 				id: item.id,
 				description: item.text?.replace(/(?:https?|ftp):\/\/[\n\S]+/g, ''),
 				imageUrl: data.includes.media?.find(
-					(media) => media.media_key == item.attachments.media_keys[0]
+					(media: any) => media.media_key == item.attachments.media_keys[0]
 				)?.url,
 				likes: item.public_metrics.like_count,
 				replies: item.public_metrics.reply_count
 			};
 
-			const _user = data.includes.users.find((user) => user.id == item.author_id);
+			const _user = data.includes.users.find((user: any) => user.id == item.author_id);
 			const user = {
 				id: _user.id,
 				name: _user.name,
@@ -63,12 +62,13 @@ const fetchPosts = async (_: VercelRequest, res: VercelResponse): Promise<Vercel
 			};
 
 			posts.push(post);
-		}
 
-		return res.status(200).json(posts);
+			return json(posts);
+		}
 	} catch (err) {
-		return res.status(err.statusCode || 500).json({ ...err });
+		if (import.meta.env.DEV) {
+			console.error('[@DEBUG] /api/applications/gobram/+server - error: ', err);
+		}
+		throw error(500);
 	}
 };
-
-export default fetchPosts;

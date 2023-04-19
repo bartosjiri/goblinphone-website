@@ -1,18 +1,12 @@
-import fetch from 'isomorphic-unfetch';
+import { json, error } from '@sveltejs/kit';
+import type { RequestHandler } from '@sveltejs/kit';
 
-import type { VercelRequest, VercelResponse } from '@vercel/node';
-
-import { GOBLR_COLLECTIONS } from '../../src/components/applications/goblr/goblr.constants';
-
-import type { Profile } from '../../src/components/applications/goblr/goblr.types';
+import { GOBLR_COLLECTIONS, type Profile } from '$components/applications/goblr';
 
 const RARIBLE_API_URL = 'https://api.rarible.org/v0.1/items/ETHEREUM';
 const PROFILES_BATCH_COUNT = 10;
 
-const fetchProfilesBatch = async (
-	_: VercelRequest,
-	res: VercelResponse
-): Promise<VercelResponse> => {
+export const GET: RequestHandler = async () => {
 	try {
 		const profilesBatch: Profile[] = [];
 
@@ -24,6 +18,7 @@ const fetchProfilesBatch = async (
 			const imageResponse = await fetch(
 				`${RARIBLE_API_URL}:${targetCollection.contractAddress}:${targetTokenId}`
 			);
+
 			const {
 				meta: { content }
 			} = await imageResponse.json();
@@ -36,10 +31,11 @@ const fetchProfilesBatch = async (
 			});
 		}
 
-		return res.status(200).json(profilesBatch);
+		return json(profilesBatch);
 	} catch (err) {
-		return res.status(err.statusCode || 500).json({ ...err });
+		if (import.meta.env.DEV) {
+			console.error('[@DEBUG] /api/applications/gobram/+server - error: ', err);
+		}
+		throw error(500);
 	}
 };
-
-export default fetchProfilesBatch;
