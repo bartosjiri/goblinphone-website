@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://goblinphone.xyz" target="_blank"><img src="static/meta/og-image.jpg" alt="Goblin Phone banner" height="384" /></a>
+  <a href="https://goblinphone.vercel.app" target="_blank"><img src="static/meta/og-image.jpg" alt="Goblin Phone banner" height="384" /></a>
 </p>
 <h1 align="center">
   Goblin Phone

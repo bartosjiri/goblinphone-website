@@ -1,6 +1,7 @@
 <script>
 	import { Analytics } from '$util/analytics';
 
+	import { DomainNotice } from '$components/environment/domain-notice';
 	import { Device } from '$components/environment/device';
 	import { TopBar } from '$components/phone/top-bar';
 	import { Navigation } from '$components/phone/navigation';
@@ -16,6 +17,7 @@
 
 <Analytics />
 
+<DomainNotice />
 <main>
 	<Scene>
 		<Device>

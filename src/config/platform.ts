@@ -1,1 +1,1 @@
-export const PLATFORM_DOMAIN = 'goblinphone.xyz';
+export const PLATFORM_DOMAIN = 'goblinphone.vercel.app';
