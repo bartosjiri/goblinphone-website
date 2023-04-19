@@ -59,6 +59,10 @@
 						<div class="text">
 							<span>Gobgram is temporary unavailable</span>
 						</div>
+						<div class="elon">
+							<img src="/assets/images/applications/gobgram/elon.png" alt="" />
+							<span>(Elon said no free API)</span>
+						</div>
 					</div>
 				{/if}
 			</div>
@@ -137,6 +141,24 @@
 
 						span {
 							font-size: 0.35em;
+							font-weight: $font-weight--bold;
+							text-align: center;
+						}
+					}
+
+					.elon {
+						display: flex;
+						flex-direction: column;
+						margin-top: 0.2em;
+						opacity: 0.5;
+
+						img {
+							display: block;
+							width: 2em;
+						}
+
+						span {
+							font-size: 0.25em;
 							font-weight: $font-weight--bold;
 							text-align: center;
 						}
