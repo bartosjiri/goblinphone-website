@@ -128,6 +128,9 @@
 		class:--active={swipable}
 	>
 		<div class="image">
+			<div class="placeholder">
+				<span>?</span>
+			</div>
 			<img src={profile.imageUrl} alt="" />
 			<div bind:this={cardOverlayDislike} class="overlay --disliked">
 				<img src="/assets/images/applications/goblr/action-dislike.png" alt="" />
@@ -174,6 +177,26 @@
 				overflow: hidden;
 				box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
 				pointer-events: none;
+				height: 100%;
+				width: 100%;
+
+				.placeholder {
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					background: #d7d7d7;
+					z-index: -1;
+
+					span {
+						font-size: 2em;
+						font-weight: $font-weight--bold;
+					}
+				}
 
 				img {
 					display: block;
